@@ -1,8 +1,7 @@
 module des_left_shift (
-    input clk,
     input wire [27:0] c_in,
     input wire [27:0] d_in,
-    input wire [4:0] round_number,
+    input wire [ 4:0] round_number,
 
     output wire [27:0] c_out,
     output wire [27:0] d_out
@@ -10,7 +9,7 @@ module des_left_shift (
 
   reg [1:0] shift_amount;
 
-  always @(posedge clk) begin
+  always @(*) begin
     case (round_number)
       5'd1, 5'd2, 5'd9, 5'd16: shift_amount = 2'd1;
 

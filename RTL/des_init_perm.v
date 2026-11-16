@@ -1,11 +1,9 @@
 module des_init_perm (
-    input clk,
     input [63:0] in_init_perm,
     output [63:0] out_init_perm
 );
 
-  always @(posedge clk) begin
-    out_init_perm = {
+  assign out_init_perm = {
       in_init_perm[6],
       in_init_perm[14],
       in_init_perm[22],
@@ -77,8 +75,7 @@ module des_init_perm (
       in_init_perm[41],
       in_init_perm[49],
       in_init_perm[57]
-    };
-  end
+  };
 endmodule
 //To get the halfs for the first round
 //wire [31:0] L0 = out_init_perm[63:32];
