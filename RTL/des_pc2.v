@@ -1,16 +1,15 @@
 module des_pc2 (
-    input wire        clk,
     input wire [27:0] c_in,
     input wire [27:0] d_in,
 
-    output reg [47:0] round_key
+    output reg [47:0] perm_rounded_key
 );
 
   wire [55:0] combined_key;
 
   assign combined_key = {c_in, d_in};
 
-  assign round_key = {
+  assign perm_rounded_key = {
     combined_key[42],
     combined_key[39],
     combined_key[45],
