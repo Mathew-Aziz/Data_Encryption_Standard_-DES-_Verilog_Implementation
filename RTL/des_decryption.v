@@ -11,7 +11,6 @@ module des_decryption(
   wire [63:0] initial_permuted_data;
   wire [63:0] round_data;
 
-  wire [55:0] permuted_key;
   wire [27:0] initial_c;
   wire [27:0] initial_d;
   wire [55:0] round_key;
@@ -25,7 +24,7 @@ module des_decryption(
   );
 
   des_pc1 pc1_unit(
-    .key(key),.pc1_key(permuted_key),.c0(initial_c),.d0(initial_d)
+    .key(key),.c0(initial_c),.d0(initial_d)
   );
 
   control control_unit(

@@ -1,10 +1,9 @@
 module des_pc1 (
     input  wire [63:0] key,
-    output wire [55:0] pc1_key,
     output wire [27:0] c0,
     output wire [27:0] d0
 );
-
+   wire [55:0] pc1_key;
   // DES Permuted Choice 1: 56 entries (the 8 parity bits are dropped)
   assign pc1_key = {
     key[7],
